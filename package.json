@@ -1,8 +1,9 @@
 {
-  "name": "moviesapp",
+  "name": "testrn",
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "web": "./node_modules/.bin/webpack-dev-server --config webpack.config.js",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
@@ -10,18 +11,28 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "react": "17.0.2",
-    "react-native": "0.67.2"
+    "react-dom": "17.0.2",
+    "react-native": "0.67.2",
+    "react-native-web": "0.17.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
+    "@babel/core": "^7.17.0",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.3",
+    "babel-preset-react-app": "^10.0.1",
     "eslint": "7.14.0",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
-    "react-test-renderer": "17.0.2"
+    "react-test-renderer": "17.0.2",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   },
   "jest": {
     "preset": "react-native"
