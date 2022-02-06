@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
 import React from 'react';
 import {View, StyleSheet, Dimensions, Image} from 'react-native';
 //import {SliderBox} from 'react-native-image-slider-box';
@@ -15,7 +14,6 @@ class TopBanner extends React.PureComponent {
           resizeMode="cover"
           style={styles.image}
           source={topBannerImage}
-          width={dimensions.width}
         />
       </View>
     );
@@ -32,7 +30,7 @@ const styles = StyleSheet.create({
   },
   image: {
     height: 200,
-    width: 120,
+    width: dimensions.width,
     borderRadius: 20,
   },
 });
