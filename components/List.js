@@ -20,7 +20,8 @@ class List extends React.PureComponent {
           <FlatList
             data={content}
             horizontal={true}
-            renderItem={({item}) => <Card item={item} />}></FlatList>
+            renderItem={({item}) => <Card item={item} />}
+          />
         </View>
       </View>
     );
