@@ -7,7 +7,7 @@ const topBannerImage = require('../assets/images/topBanner.jpg');
 
 class Banner extends React.PureComponent {
   render() {
-    console.log('In Web Top Banner!!!!!!!!!!!!!!!!!!!!!!!!!!');
+    console.log('Web Top Banner Component Loaded !!');
     return (
       <View style={styles.topBanner}>
         <Image
