@@ -1,11 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  ActivityIndicator,
-  View,
-  StyleSheet,
-  Dimensions,
-  ScrollView,
-} from 'react-native';
+import {ActivityIndicator, View, StyleSheet, ScrollView} from 'react-native';
 import {
   getPopularMovies,
   getUpcomingMovies,
@@ -13,12 +7,12 @@ import {
   getFamilyMovies,
   getDocumentaryMovies,
 } from '../services/services';
-import {SliderBox} from 'react-native-image-slider-box';
+
 import react from 'react';
 import List from '../components/List';
 import Error from '../components/Error';
+import TopBanner from '../components/TopBanner';
 
-const dimentions = Dimensions.get('screen');
 const Home = () => {
   const [moviesImages, setMoviesImages] = useState();
   const [popularMovies, setPopularMovies] = useState();
@@ -76,17 +70,7 @@ const Home = () => {
       {/* Upcoming Movies */}
       {loaded && !error && (
         <ScrollView>
-          {moviesImages && (
-            <View style={styles.sliderContainer}>
-              <SliderBox
-                images={moviesImages}
-                dotStyle={styles.sliderStyle}
-                sliderBoxHeight={dimentions.height / 1.5}
-                autoplay={true}
-                circleLoop={true}
-              />
-            </View>
-          )}
+          {moviesImages && <TopBanner moviesImages={moviesImages} />}
           {/* Popular Movies */}
           {popularMovies && (
             <View style={styles.carousel}>
