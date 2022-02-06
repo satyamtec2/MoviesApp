@@ -12,6 +12,7 @@ import react from 'react';
 import List from '../components/List';
 import Error from '../components/Error';
 import TopBanner from '../components/TopBanner';
+//import ImageSlider from '../components/ImageSlider';
 
 const Home = () => {
   const [moviesImages, setMoviesImages] = useState();
@@ -70,7 +71,8 @@ const Home = () => {
       {/* Upcoming Movies */}
       {loaded && !error && (
         <ScrollView>
-          {moviesImages && <TopBanner moviesImages={moviesImages} />}
+          {moviesImages && <TopBanner />}
+          {/*moviesImages && <ImageSlider moviesImages={moviesImages} />*/}
           {/* Popular Movies */}
           {popularMovies && (
             <View style={styles.carousel}>
@@ -104,14 +106,6 @@ const Home = () => {
 };
 
 const styles = StyleSheet.create({
-  sliderContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  sliderStyle: {
-    height: 0,
-  },
   carousel: {
     flex: 1,
     justifyContent: 'center',
