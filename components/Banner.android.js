@@ -6,7 +6,7 @@ const dimensions = Dimensions.get('screen');
 
 class Banner extends React.PureComponent {
   render() {
-    console.log('In Android Banner!!!!!!!!!!!!!!!!!!!!!!!!!!');
+    console.log('Android Top Banner Component Loaded !!');
     const {moviesImages} = this.props;
     return (
       <View style={styles.sliderContainer}>
