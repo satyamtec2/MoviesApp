@@ -11,7 +11,8 @@ import {
 import react from 'react';
 import List from '../components/List';
 import Error from '../components/Error';
-import TopBanner from '../components/TopBanner';
+import Banner from '../components/Banner';
+//import TopBanner from '../components/TopBanner';
 //import ImageSlider from '../components/ImageSlider';
 
 const Home = () => {
@@ -71,8 +72,9 @@ const Home = () => {
       {/* Upcoming Movies */}
       {loaded && !error && (
         <ScrollView>
-          {moviesImages && <TopBanner />}
+          {/*moviesImages && <TopBanner />*/}
           {/*moviesImages && <ImageSlider moviesImages={moviesImages} />*/}
+          {moviesImages && <Banner moviesImages={moviesImages} />}
           {/* Popular Movies */}
           {popularMovies && (
             <View style={styles.carousel}>
