@@ -1,5 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, ScrollView, Image, Dimensions, View} from 'react-native';
+import {
+  StyleSheet,
+  ScrollView,
+  Image,
+  Dimensions,
+  View,
+  Text,
+} from 'react-native';
 import {getMovie} from '../services/services';
 
 const placeholderImage = require('../assets/images/placeholder.png');
@@ -36,6 +43,21 @@ const Detail = ({route, navigation}) => {
                   : placeholderImage
               }
             />
+            <View style={styles.container}>
+              <Text style={styles.movieTitle}>{movieDetail.title}</Text>
+              {movieDetail.genres && (
+                <View style={styles.genresContainer}>
+                  {movieDetail.genres.map(genre => {
+                    return (
+                      <Text style={styles.genre} key={genre.id}>
+                        {genre.name}
+                      </Text>
+                    );
+                  })}
+                </View>
+              )}
+              <Text style={styles.overview}>{movieDetail.overview}</Text>
+            </View>
           </ScrollView>
         </View>
       )}
