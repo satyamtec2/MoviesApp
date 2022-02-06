@@ -1,23 +1,34 @@
-import React from 'react';
+/* eslint-disable react-native/no-inline-styles */
+import React, {useEffect, useState} from 'react';
 import {Text, View} from 'react-native';
+import {getPopularMovies} from './services/services';
 
 const App = () => {
-  console.log(
-    'Logging working completely fine. Logs in terminal using metro server for android & logs in browser console for Web!!Debugger also tested!!!',
-  );
+  const [movie, setMovie] = useState('');
+  const [error, setError] = useState(false);
+  useEffect(() => {
+    getPopularMovies()
+      .then(movies => {
+        setMovie(movies[0]);
+      })
+      .catch(err => {
+        setError(err);
+      });
+  }, []);
+
   return (
     <View
-      // eslint-disable-next-line react-native/no-inline-styles
       style={{
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text>
-        Yay ..... I am in my MoviesApp Codebase... running applications on both
-        Msite & App... properly tested!! Debugger Testing: Further Changes WIP!!!
-      </Text>
+      <Text>Movie Name: {movie.original_title}</Text>
+      <Text>Language: {movie.original_language}</Text>
+      <Text>Release Date: {movie.release_date}</Text>
+      {error && <Text style={{color: 'red'}}>Error in the server</Text>}
     </View>
   );
 };
+
 export default App;
