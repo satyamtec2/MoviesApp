@@ -68,6 +68,32 @@ module.exports = {
           presets: [require.resolve('babel-preset-react-app')],
         },
       },
+
+      {
+        test: /\.(gif|jpe?g|png|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: '[name].[ext]',
+            esModule: false,
+          },
+        },
+      },
+      /*
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
+          },
+        ],
+      },
+      */
     ],
   },
   resolve: {
